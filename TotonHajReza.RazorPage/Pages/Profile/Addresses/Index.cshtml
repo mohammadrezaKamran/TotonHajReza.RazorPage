@@ -1,0 +1,122 @@
+﻿@page "{id}"
+@model TotonHajReza.RazorPage.Pages.Profile.Addresses.IndexModel
+@{
+    ViewData["Title"] = "پروفایل";
+    ViewData["selected"] = "Addresses";
+}
+<main>
+    <!-- breadcrumb start -->
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="col">
+                <div class="row">
+                    <div class="breadcrumb-index">
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-ul">
+                            <li class="breadcrumb-li">
+                                <a class="breadcrumb-link" href="index.html"> خانه</a>
+                            </li>
+                            <li class="breadcrumb-li">
+                                <span class="breadcrumb-text">آدرس پروفایل</span>
+                            </li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end -->
+    <!-- تاریخچه سفارش start -->
+    <section class="pro-address-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="password-block">
+                        <!-- order profile start -->
+                        <partial name="Shared/Profile/_ProfileSide" />                     
+                        <!-- order profile end -->
+                        <!-- order info start -->
+                        <div class="profile-form profile-address">
+                            <div class="billing-area">
+
+                                <form method="post">
+
+                                   @*  <input type="hidden" name="id" value="@UserAddress.Id ?? '0'" /> *@
+
+                                    <div class="pro-add-title">
+                                        <h6 data-animate="animate__fadeInUp">آدرس تماس</h6>
+                                    </div>
+                                    <div class="billing-form">
+                                        <ul class="input-2">
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="Name"></label>
+                                                <input type="text" asp-for="Name" name="Name" placeholder="نام">
+                                            </li>
+
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="Family"></label>
+                                                <input type="text" asp-for="Family" name="Family" placeholder="نام خانوادگی">
+                                            </li>
+
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="PhoneNumber"></label>
+                                                <input type="text" asp-for="PhoneNumber" name="PhoneNumber" placeholder="شماره تماس">
+                                            </li>
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="Shire"></label>
+                                                <input type="text" asp-for="Shire" name="Shire" placeholder="استان">
+                                            </li>
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="City"></label>
+                                                <input type="text" asp-for="City" name="City" placeholder="شهر">
+                                            </li>
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="PostalAddress"></label>
+                                                <input type="text" asp-for="PostalAddress" name="PostalAddress" placeholder="آدرس">
+                                            </li>
+
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="PostalCode"></label>
+                                                <input type="text" asp-for="PostalCode" name="PostalCode" placeholder="کد پستی">
+                                            </li>
+
+                                            <li class="billing-li" data-animate="animate__fadeInUp">
+                                                <label asp-for="NationalCode"></label>
+                                                <input type="text" asp-for="NationalCode" name="NationalCode" placeholder="کد ملی">
+                                            </li>
+                                     
+                                        </ul>
+                                        <ul class="pro-submit">
+                                            <li class="label-info" data-animate="animate__fadeInUp">
+                                                <label class="box-area">
+                                                    <span class="text">اطمینان دارم</span>
+                                                    <input type="checkbox" class="cust-checkbox">
+                                                    <span class="cust-check"></span>
+                                                </label>
+                                            </li>
+                                            <li data-animate="animate__fadeInUp">
+                                                <button class="btn btn-style2 checkout disabled">به‌روزرسانی آدرس</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <!-- order info end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- تاریخچه سفارش end -->
+</main>

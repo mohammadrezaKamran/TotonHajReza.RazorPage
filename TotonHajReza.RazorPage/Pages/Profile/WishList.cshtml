@@ -1,0 +1,123 @@
+﻿@page
+@model TotonHajReza.RazorPage.Pages.Profile.WishListModel
+@{
+}
+<main>
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="col">
+                <div class="row">
+                    <div class="breadcrumb-index">
+                        <ul class="breadcrumb-ul">
+                            <li class="breadcrumb-li">
+                                <a class="breadcrumb-link" href="index.html"> خانه</a>
+                            </li>
+                            <li class="breadcrumb-li">
+                                <span class="breadcrumb-text">لیست علاقه مندی ها</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-histry-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="password-block">
+                        <!-- order profile start -->
+                        <partial name="Shared/Profile/_ProfileSide" />
+
+                        <!-- order profile end -->
+                        <!-- order info start -->
+                            @if (Model.Products != null)
+                        {
+                            <div class="profile-form order-info">
+                                <div class="pro-add-title">
+                                    <h6 data-animate="animate__fadeInUp">علاقه مندی ها</h6>
+                                </div>
+                                <div class="wishlist-area">
+                                    <div class="wishlist-details">
+                                        <div class="wishlist-item" data-animate="animate__fadeInUp">
+                                            <span class="wishlist-head">لیست علاقه مندی من:</span>
+                                            <span class="sp-link-title">@Model.Products.Count</span>
+                                        </div>
+
+
+                                        @foreach (var item in Model.Products)
+                                        {
+                                            <div class="wishlist-all-pro">
+                                                <div class="wishlist-pro">
+                                                    <div class="wishlist-pro-image">
+                                                        <a href="product.html" data-animate="animate__fadeInUp">
+                                                            <img src="/img/menu/home-pro-banner1.jpg" class="img-fluid" alt="p-1">
+                                                        </a>
+                                                    </div>
+                                                    <div class="pro-details">
+                                                        <h6>
+                                                            <a href="product.html" data-animate="animate__fadeInUp">@item.Title</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class="qty-item">
+                                                    <a href="cart-page.html" class="add-wishlist" data-animate="animate__fadeInUp">افزودن به سبد خرید</a>
+                                                    <a href="checkout-1.html" class="add-wishlist" data-animate="animate__fadeInUp">هم اکنون بخرید</a>
+                                                </div>
+                                                <div class="all-pro-price">
+                                                    <div class="price-box" data-animate="animate__fadeInUp">
+                                                        <span class="new-price">@* @item.Inventory.Price *@</span>
+                                                        <span class="old-price">25,000 تومان</span>
+                                                    </div>
+                                                    <span class="wishalist-icon" data-animate="animate__fadeInUp"><i class="fa fa-heart text-danger"></i></span>
+                                                </div>
+                                            </div>
+                                        } 
+                                </div>
+                            </div>    
+                            <div class="wishlist-area">
+                                <div class="wishlist-details">                                  
+                                    <div class="other-link">
+                                        <ul class="other-ul">
+                                            <li class="wishlist-other-link" data-animate="animate__fadeInUp">
+                                                <a href="collection.html" class="btn btn-style2">ادامه خرید</a>
+                                            </li>
+                                            <li class="wishlist-other-link" data-animate="animate__fadeInUp">
+                                                <a href="wishlist-empty.html" class="btn btn-style2">پاک کردن لیست علاقه مندی ها</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <section class="cart-page section-ptb">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="empty-cart-page">
+                                                <div class="section-capture">
+                                                    <div class="section-title">
+                                                        <h2 data-animate="animate__fadeInUp"><span>لیست علاقه مندی خالی است</span></h2>
+                                                        <p data-animate="animate__fadeInUp">متاسفانه لیست علاقه مندی شما در حال حاضر هیچ محصولی ندارد، برای ادامه مرور بر روی 'اینجا' کلیک کنید.</p>
+                                                        <p data-animate="animate__fadeInUp">
+                                                            برای ادامه مرور
+                                                            <a href="collection.html">اینجا</a>.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

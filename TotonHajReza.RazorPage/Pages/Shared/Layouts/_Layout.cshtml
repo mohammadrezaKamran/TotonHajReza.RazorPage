@@ -1,0 +1,115 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="یک قالب شیک، خلاقانه و مدرن برای تجارت الکترونیک در صنایع مختلف.">
+    <meta name="keywords" content="قالب غذا، محصولات نانوایی، html، قالب تجارت الکترونیک، گیاهان، غذای ارگانیک، رستوران، درخت زنده، واکنش‌گرا، پیتزا، برگر، مبلمان، موبایل، ساعت، الکترونیک، لوازم جانبی کامپیوتر، اسباب‌بازی، جواهرات، لوازم رستوران">
+    <meta name="author" content="محمد عموئی_webify">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- title -->
+    <title>@ViewData["Title"]</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon/favicon4.png">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-icons.css">
+    <!-- magnific-popup css -->                  
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
+    <!-- fontawesome css -->                     
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css">
+    <!--fether css -->                           
+    <link rel="stylesheet" type="text/css" href="/css/feather.css">
+    <!-- animate css -->                         
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+    <!-- owl-carousel css -->                    
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
+    <!-- swiper css -->                          
+    <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css">
+    <!-- slick slider css -->                    
+    <link rel="stylesheet" type="text/css" href="/css/slick.css">
+    <!-- collection css -->                      
+    <link rel="stylesheet" type="text/css" href="/css/collection.css">
+    <!-- blog css -->                            
+    <link rel="stylesheet" type="text/css" href="/css/blog.css">
+    <!-- other-pages css -->
+    <link rel="stylesheet" type="text/css" href="/css/other-pages.css">
+    <!-- product-page css -->
+    <link rel="stylesheet" type="text/css" href="/css/product-page.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/css/style7.css">
+    <link rel="stylesheet" href="/assets/css/plugins/sweetalert2.min.css">
+</head>
+<body>
+    <!-- popup-wrapper start -->
+@*     <div class="popup-wrapper" id="popup-wrapper">
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+                        <div class="popup-info">
+                            <div class="popup-wrap  popup-image">
+                                <img src="/img/popup/popup-img.jpg" class="img-fluid" alt="popup-img">
+                            </div>
+                            <div class="popup-wrap  popup-text-news">
+                                <div class="popup-text">
+                                    <h2>خبرنامه</h2>
+                                    <p>برای دریافت 20% تخفیف در خرید بعدی، پیشنهادات ویژه و سایر اطلاعات تخفیف، اینجا ثبت نام کنید.</p>
+                                </div>
+                                <div class="popup-newsletter">
+                                    <form action="/contact#contact_form" method="post" class="contact-form">
+                                        <div class="subscribe-block">
+                                            <input type="email" placeholder="ایمیل خود را وارد کنید.. " class="email">
+                                            <div class="popup-button">
+                                                <button type="submit" class="btn btn-style popup-btn"><span>اشتراک</span></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> *@
+    <!-- popup-wrapper end -->
+    <!-- header start -->
+    <header class="main-header" id="stickyheader">
+        <partial name="_Header"/>
+    </header>
+    <!-- header end -->
+    <!-- main start -->
+    <main id="main-content">
+        <!-- main-slider start -->
+       @RenderBody();
+        <!-- brand-logo end -->
+    </main>
+    <!-- main end -->
+    <!-- footer start -->
+   <partial name="_Footer" />
+    <!-- footer-copyright end -->
+    <!-- search-modal start -->
+   <partial name="_Side" />
+    <!-- cart-drawer end -->
+    <!-- quickview modal start -->
+  
+    <!-- bottom-menu end -->
+
+    <script src="/js/jquery-3.6.3.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/counter.js"></script>
+    <script src="/js/typewriter.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

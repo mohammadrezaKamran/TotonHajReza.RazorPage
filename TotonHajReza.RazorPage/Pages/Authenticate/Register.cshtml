@@ -1,0 +1,68 @@
+﻿@page
+@model TotonHajReza.RazorPage.Pages.Authenticate.RegisterModel
+@{
+	Layout = "Shared/Layouts/_AuthLayout";
+	ViewData["Title"] = "ثبت نام در سایت";
+}
+
+
+			<form method="post" class="login100-form validate-form">
+				<span class="login100-form-title p-b-43">
+					ثبت نام
+				</span>
+
+
+				<div class="wrap-input100 validate-input" data-validate="شماره تماس معتبر نیست">
+					<input class="input100" asp-for="PhoneNumber" type="text">
+					<span class="focus-input100"></span>
+					<span class="label-input100">شماره تماس</span>
+				</div>
+
+
+				<div class="wrap-input100 validate-input" data-validate="رمز عبور الزامی است">
+					<input class="input100" asp-for="Password" type="password">
+					<span class="focus-input100"></span>
+					<span class="label-input100">رمز عبور</span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="تکرار رمز عبور الزامی است">
+					<input class="input100" asp-for="ConfirmPassword" type="password">
+					<span class="focus-input100"></span>
+					<span class="label-input100">تکرار رمز عبور</span>
+				</div>
+
+				<div class="flex-sb-m w-full p-t-3 p-b-32">					
+
+					<div>
+						<a asp-page="Login" class="txt1">
+							حساب کاربری دارم
+						</a>
+					</div>
+				</div>
+
+	<div class="error-message"  asp-validation-summary="All"></div>
+	<div class="container-login100-form-btn">
+					<button class="login100-form-btn">
+						ثبت نام
+					</button>
+				</div>
+
+				<div class="text-center p-t-46 p-b-20">
+					<span class="txt2">
+						ثبت نام با 
+					</span>
+				</div>
+
+				<div class="login100-form-social flex-c-m">
+					<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+						<i class="fa fa-facebook-f" aria-hidden="true"></i>
+					</a>
+
+					<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+				</div>
+			</form>
+
+			<div class="login100-more" style="background-image: url('/Auth/images/bg-01.jpg');">
+			</div>

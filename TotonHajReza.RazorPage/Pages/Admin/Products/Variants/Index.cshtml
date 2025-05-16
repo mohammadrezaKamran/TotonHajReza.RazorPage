@@ -1,0 +1,53 @@
+﻿@page "{handler?}"
+@model TotonHajReza.RazorPage.Pages.Admin.Products.Variants.IndexModel
+@{
+    ViewData["title"] = "مدیریت تنوع محصولات";
+    ViewData["selected"] = "products_productVariant";
+}
+
+<a asp-page="Add" class="btn btn-success mb-2">
+    <i class="fa fa-plus"></i>
+    افرودن تنوع محصول
+</a>
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th>Weight</th>
+                    <th>Price</th>
+                    <th>StockQuantity</th>
+                    <th>DiscountPercentage</th>
+                    <th>Status</th>
+                    <th>Color</th>
+                    <th>slug</th>
+                    <th>کد کالا ( SKU )</th>
+                    <th>تاریخ ثبت</th>
+                    <th>عملیات</th>
+                    <th>NicotineLevel</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.FilterResult.Data)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Directories.GetProductImage(item.ImageName)" width="250px" />
+                        </td>
+                        <td>@item.Title</td>
+                        <td>@item.Slug</td>
+                        <td>SKU</td>
+                        <td>@item.CreationDate.ToPersianDateTime()</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" asp-page="Edit" asp-route-productId="@item.Id">ویرایش</a>
+                            <a asp-page="Galleries/Index" asp-route-productId="@item.Id" class="btn btn-warning btn-sm">گالری تصاویر</a>
+                        </td>
+                        <td>
+                            <a asp-page="Variants/Index" asp-route-productId="@item.Id" class="btn btn-success btn-sm">مشاهده تنوع ها</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

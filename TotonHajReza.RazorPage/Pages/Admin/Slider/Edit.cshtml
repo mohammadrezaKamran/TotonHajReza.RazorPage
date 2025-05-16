@@ -1,0 +1,32 @@
+﻿@page "{id}"
+@using TotonHajReza.RazorPage.Infrastructure
+@model TotonHajReza.RazorPage.Pages.Admin.Slider.EditModel
+@{
+    ViewData["Title"] = "ویرایش اسلایدرها";
+    ViewData["selected"] = "slider";
+}
+
+<form method="post" class="card" enctype="multipart/form-data">
+    
+    <div class="row  card-body">
+
+            @Html.HiddenFor(f => f.ImageFile)
+
+            <div class="col-md-6">
+                @Html.EditorFor(f => f.Title)
+            </div>
+            <div class="col-md-6">
+                @Html.EditorFor(f => f.Link)
+            </div>
+            <div class="col-md-12">
+                @Html.EditorFor(f => f.ImageFile)
+            </div>
+    </div>
+        <div class="col-12">
+            <img src="@Directories.GetSliderImage(Model.ImageName)" style="width: 100%; height: 300px" />
+        </div>
+    
+    <div class="card-footer text-left">
+        <button class="btn btn-success" type="submit">ثبت اطلاعات</button>
+    </div>
+</form>

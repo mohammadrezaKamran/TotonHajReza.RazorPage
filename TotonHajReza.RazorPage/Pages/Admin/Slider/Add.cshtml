@@ -1,0 +1,24 @@
+﻿@page
+@model TotonHajReza.RazorPage.Pages.Admin.Slider.AddModel
+
+@{
+    ViewData["Title"] = "افزودن اسلایدرها";
+    ViewData["selected"] = "slider";
+}
+
+<form method="post" class="card" enctype="multipart/form-data">
+    <div class="row  card-body">
+        <div class="col-md-6">
+            @Html.EditorFor(f => f.Title)
+        </div>
+        <div class="col-md-6">
+            @Html.EditorFor(f => f.Link)
+        </div>
+        <div class="col-md-12">
+            @Html.EditorFor(f => f.ImageFile)
+        </div>
+    </div>
+    <div class="card-footer text-left">
+        <button class="btn btn-success" type="submit">ثبت اطلاعات</button>
+    </div>
+</form>

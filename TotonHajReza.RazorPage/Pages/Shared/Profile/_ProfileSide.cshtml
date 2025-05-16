@@ -1,0 +1,70 @@
+﻿@using TotonHajReza.RazorPage.Infrastructure
+@using TotonHajReza.RazorPage.Infrastructure.Utils
+@using TotonHajReza.RazorPage.Services.UserAddress
+@using TotonHajReza.RazorPage.Services.Users
+@inject IUserService _user 
+@inject IUserAddressService _userAddress
+@{
+    var CurrentUser =await _user.GetCurrentUser();
+
+    var UserAddress = await _userAddress.GetUserAddress();
+
+    var selected = ViewData["selected"]?.ToString() ?? "";
+}
+
+<div class="profile-info">
+    <div class="account-profile">
+        <div class="pro-img">
+            <a href="javascript:void(0)" data-animate="animate__fadeInUp">
+
+                    <img src="@SiteSettings.ServerPath/images/users/avatar/@CurrentUser?.AvatarName" class="img-fluid" alt="testi-1">
+            </a>
+        </div>
+        <div class="profile-text">
+            <h6 data-animate="animate__fadeInUp">@CurrentUser?.Name @CurrentUser?.Family</h6>
+            <span data-animate="animate__fadeInUp">@CurrentUser?.CreationDate.ToPersianDate()</span>
+        </div>
+    </div>
+    <div class="account-detail">
+        <ul class="profile-ul">
+            <li class="profile-li" data-animate="animate__fadeInUp">
+                <a href="/Profile/orders" class="@(selected=="orders"?"active":null)">
+                    <span>سفارشات</span>
+                   @*  <span class="pro-count">SignalR</span> *@
+                </a>
+            </li>
+            <li class="profile-li" data-animate="animate__fadeInUp">
+                <a href="/profile" class="@(selected=="profile"?"active":null)">پروفایل</a>
+            </li>
+            <li class="profile-li" data-animate="animate__fadeInUp">
+                @if(UserAddress==null){
+                 <a asp-page="/Profile/Addresses/Index" asp-route-id="0" class="@(selected=="Addresses"?"active":null)">آدرس</a>}
+                else{
+                <a asp-page="/Profile/Addresses/Index" asp-route-id="@UserAddress.Id" class="@(selected=="Addresses"?"active":null)">آدرس</a>}
+          
+            </li>
+            <li class="profile-li" data-animate="animate__fadeInUp">
+                <a href="/Profile/WishList" class="@(selected=="WishList"?"active":null)">
+                    <span>علاقه مندی ها</span>
+                  @*   <span class="pro-count")">SignalR</span> *@
+                </a>
+            </li>
+            <li class="profile-li" data-animate="animate__fadeInUp">
+                <a href="/Profile/ChangePassword" class="@(selected=="ChangePassword"?"active":null)">
+                    <span>تغییر رمز عبور</span>
+                </a>
+            </li>
+      @*       <li class="profile-li" data-animate="animate__fadeInUp">
+                <a href="/Profile/Ticket/Index" class="@(selected=="Tickets"?"active":null)">
+                    <span>تیکت های من</span>
+                     <span class="pro-count" >Ajax or SignalR</span> 
+                </a>
+            </li> *@
+            <li class="profile-li" data-animate="animate__fadeInUp">
+                <a href="index.html">
+                    <span>خروج</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

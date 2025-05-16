@@ -1,0 +1,42 @@
+﻿@page "{id?}"
+@using TotonHajReza.RazorPage.Infrastructure
+@model TotonHajReza.RazorPage.Pages.Admin.Banner.IndexModel
+@{
+    ViewData["title"] = "مدیریت بنر ها";
+    ViewData["selected"] = "banner";
+}
+<h3>@ViewData["title"]</h3>
+<a asp-page="Add" class="btn btn-success mb-2">افزودن بنر</a>
+
+<div class="table-responsive card card-body p-0">
+    <table class="table table-bordered mb-0">
+        <thead>
+            <tr>
+                <th>عکس</th>
+                <th>موقعیت</th>
+                <th>url</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Banners)
+            {
+                <tr>
+                    <td>
+                        <img style="max-width: 200px" src="@Directories.GetBannerImage(item.ImageName)" />
+                    </td>
+                    <td>
+                        @item.Position.ToString().Replace("_", " ")
+                    </td>
+                    <td>@item.Link</td>
+                    <td>
+                        <form method="post" asp-page-handler="Delete" asp-route-bannerId="@item.Id" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">حذف</button>
+                        </form>
+                        <a asp-page="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.Id">ویرایش</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

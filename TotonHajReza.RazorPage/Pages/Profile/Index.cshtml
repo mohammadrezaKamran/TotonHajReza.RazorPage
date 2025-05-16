@@ -1,0 +1,103 @@
+﻿@page
+@model TotonHajReza.RazorPage.Pages.Profile.IndexModel
+@{
+    ViewData["Title"] = "پروفایل";
+    ViewData["selected"] = "profile";
+  
+    var Type = Model.Gender.GetType();
+}
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="breadcrumb-index">
+                    <!-- breadcrumb-list start -->
+                    <ul class="breadcrumb-ul">
+                        <li class="breadcrumb-li">
+                            <a class="breadcrumb-link" href="index.html"> خانه</a>
+                        </li>
+                        <li class="breadcrumb-li">
+                            <span class="breadcrumb-text">پروفایل</span>
+                        </li>
+                    </ul>
+                    <!-- breadcrumb-list end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb end -->
+<!--profile start -->
+<section class="pro-address-area section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="password-block">
+                    <!-- order profile start -->
+                   <partial name="Shared/Profile/_ProfileSide" />
+                    <!-- order profile end -->
+                    <!-- order info start -->
+                    <div class="profile-form profile-address">
+                        <div class="billing-area">
+
+                            <form method="post" enctype="multipart/form-data">
+
+                                <div class="pro-add-title">
+                                    <h6 data-animate="animate__fadeInUp">پروفایل</h6>
+                                </div>
+                                <div class="billing-form">
+                                    <ul class="input-2">
+                                        <li class="billing-li" data-animate="animate__fadeInUp">
+                                            <label>نام</label>
+                                            <input type="text" asp-for="Name" name="name" placeholder="نام">
+                                            <span asp-validation-for="Name"></span>
+                                        </li>
+                                        <li class="billing-li" data-animate="animate__fadeInUp">
+                                            <label>نام خانوادگی</label>
+                                            <input type="text" asp-for="Family" name="Family" placeholder="نام خانوادگی">
+                                            <span asp-validation-for="Family"></span>
+                                        </li>
+                                        <li class="billing-li" data-animate="animate__fadeInUp">
+                                            <label>آدرس ایمیل</label>
+                                            <input type="email" asp-for="Email" name="Email" placeholder="آدرس ایمیل" required="">
+                                            <span asp-validation-for="Email"></span>
+                                        </li>
+                                        <li class="billing-li" data-animate="animate__fadeInUp">
+                                            <label>شماره تلفن</label>
+                                            <input type="text" asp-for="PhoneNumber" name="PhoneNumber" placeholder="شماره تلفن">
+                                            <span asp-validation-for="PhoneNumber"></span>
+                                        </li>
+                                        <li class="billing-li" data-animate="animate__fadeInUp">
+                                            <label>Gender</label>
+                                            <select asp-for="Gender" class="select2" asp-items="Html.GetEnumSelectList(Type)">
+                                            </select>
+                                            <span asp-validation-for="Gender"></span>
+                                        </li>
+                                        <li class="billing-li" data-animate="animate__fadeInUp">
+                                            <label>تصویر</label>
+                                            <input type="file" asp-for="Avatar" name="Avatar" placeholder="تصویر">
+                                            <span asp-validation-for="Avatar"></span>
+                                        </li>
+                                    </ul>
+                                    <ul class="pro-submit">
+                                        <li class="label-info" data-animate="animate__fadeInUp">
+                                            <label class="box-area">
+                                                <span class="text">اطمینان دارم</>"/span>
+                                                <input type="checkbox" class="cust-checkbox">
+                                                <span class="cust-check"></span>
+                                            </label>
+                                        </li>
+                                        <li data-animate="animate__fadeInUp">
+                                            <button class="btn btn-style2 checkout disabled">به روز رسانی پروفایل</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- order info end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

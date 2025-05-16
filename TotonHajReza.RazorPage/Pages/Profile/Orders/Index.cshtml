@@ -1,0 +1,100 @@
+﻿@page
+@model TotonHajReza.RazorPage.Pages.Profile.Orders.IndexModel
+@{
+    ViewData["Title"] = "پروفایل";
+    ViewData["selected"] = "orders";
+}
+<main>
+    <!-- breadcrumb start -->
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="col">
+                <div class="row">
+                    <div class="breadcrumb-index">
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-ul">
+                            <li class="breadcrumb-li">
+                                <a class="breadcrumb-link" href="index.html"> خانه</a>
+                            </li>
+                            <li class="breadcrumb-li">
+                                <span class="breadcrumb-text">تاریخچه سفارش</span>
+                            </li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end -->
+    <!-- تاریخچه سفارش start -->
+    <section class="order-histry-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="password-block">
+                        <!-- order profile start -->
+                        <partial name="Shared/Profile/_ProfileSide" />
+                        <!-- order profile end -->
+                        <!-- order info start -->
+                        <div class="profile-form order-info" data-animate="animate__fadeInUp">
+                            <div class="pro-add-title">
+                                <h6>تاریخچه سفارش</h6>
+                            </div>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>شماره سفارش</th>
+                                        <th>تاریخ خرید</th>
+                                        <th>وضعیت</th>
+                                        <th>2وضعیت</th>
+                                        <th>مجموع</th>
+                                    </tr>
+                           
+                            </thead>
+                            
+                                <tbody>
+                                    @foreach(var item in Model.FilterResult.Data){
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.CreationDate</td>
+                                            <td>@item.ShippingType</td>
+                                            <td class="@Model.GetStatusClass(item.Status.ToString())">@item.Status</td>
+                                            <td>@item.TotalPrice</td>
+                                        </tr>
+                          @*           <tr>
+                                        <td>34VB5540K83</td>
+                                        <td>11 آوریل 2024</td>
+                                        <td class="process">در حال پردازش</td>
+                                        <td>540.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>78A643CD409</td>
+                                        <td>15 آوریل 2024</td>
+                                        <td class="delayed">تاخیر</td>
+                                        <td>412,000 تومان</td>
+                                    </tr>
+                                    <tr>
+                                        <td>78A643CD409</td>
+                                        <td>18 آوریل 2024</td>
+                                        <td class="delivered">تحویل داده شده</td>
+                                        <td>805,000 تومان</td>
+                                    </tr>
+                                    <tr class="no-bottom-border">
+                                        <td>78A643CD409</td>
+                                        <td>21 آوریل 2024</td>
+                                        <td class="delivered">تحویل داده شده</td>
+                                        <td>270.20</td>
+                                    </tr> *@
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- order info end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- تاریخچه سفارش end -->
+</main>
